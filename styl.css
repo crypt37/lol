@@ -1,0 +1,133 @@
+.top{
+    background-color: #30e3ca;
+    padding: 20px;
+}
+body{
+    margin: 0;
+    text-align: center;
+
+color: #40514e;
+}
+p {
+    line-height: 2;
+}
+
+h1{
+    font-family: 'Dancing Script', cursive;
+margin-top: 50px;
+    font-size: 100px  ;
+    color:paleturquoise;
+
+}
+h2{
+    font-family: 'Quicksand', sans-serif;
+    font-size:2.5rem;
+    color:paleturquoise;
+
+}
+h3{
+    font-family: 'Raleway', sans-serif;
+    color:paleturquoise;
+
+}
+
+
+
+.top-cloud{
+    position: relative;
+    margin-left: 60%;
+ margin-top: 100px;
+
+}
+.text {
+    position: absolute;
+    margin-top: 4%;
+}
+
+hr {
+    border: dotted #eaf6f6 6px;
+    border-bottom: none;
+    margin: 100px auto;
+    width:4%
+}
+
+ .intro {
+     width:30%;
+     margin: auto;
+ }
+
+.bottom-cloud{
+    position: relative;
+    margin-right: 68%;
+}
+.skill-row
+{
+
+    margin:200px auto 200px auto;
+   text-align: left;
+    line-height:2;
+    margin: 10% 10%;
+
+}
+.singer {
+
+    border-radius: 50px;
+    float: left;
+margin-right: 30px;
+    width:300px;
+    height:300px;
+
+}
+.writer {
+
+    width:300px;
+    height:300px;
+    float: right;
+    border-radius: 50px;
+    margin-left: 30px;
+
+
+}
+.yaku {
+    margin-top: 20px;
+}
+.middle-container{
+
+
+}
+.bottom-container {
+    margin-top: 20px;
+    padding-top :20px;
+    background-color: #08f7c7;
+}
+.btn {
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    text-shadow: 0px 1px 0px #3a9e8d;
+    font-family: 'Raleway', sans-serif;
+    color: #253d3d;
+    font-size: 20px;
+    background: #08786f;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #08f7c7;
+    background-image: -webkit-linear-gradient(top, #08f7c7, #3498db);
+    background-image: -moz-linear-gradient(top, #08f7c7, #3498db);
+    background-image: -ms-linear-gradient(top, #08f7c7, #3498db);
+    background-image: -o-linear-gradient(top, #08f7c7, #3498db);
+    background-image: linear-gradient(to bottom, #08f7c7, #3498db);
+    text-decoration: none;
+}
+
+a {
+    color:#253d3d;
+    margin :10px 20px 10px;
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+}
