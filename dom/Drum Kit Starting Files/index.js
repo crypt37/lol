@@ -1,5 +1,5 @@
 document.addEventListener('keyup', (event) => {
-    button_pressed(event.keyseseww);
+    button_pressed(event.key);
 
 });
 
