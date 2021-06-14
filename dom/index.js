@@ -1,61 +1,81 @@
-document.addEventListener('keyup', (event) => {
-    button_pressed(event.key);
+var numberOfDrumButtons = document.querySelectorAll(".drum").length;
+
+for (var i = 0; i < numberOfDrumButtons; i++) {
+
+  document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+
+    var buttonInnerHTML = this.innerHTML;
+
+    makeSound(buttonInnerHTML);
+
+    buttonAnimation(buttonInnerHTML);
+
+  });
+
+}
+
+document.addEventListener("keypress", function(event) {
+
+  makeSound(event.key);
+
+  buttonAnimation(event.key);
 
 });
 
 
-const lols = document.querySelectorAll(".drum")
+function makeSound(key) {
 
-for (var i = 0; i <= lols.length; i++) {
+  switch (key) {
+    case "w":
+      var tom1 = new Audio("sounds/tom-1.mp3");
+      tom1.play();
+      break;
+
+    case "a":
+      var tom2 = new Audio("sounds/tom-2.mp3");
+      tom2.play();
+      break;
+
+    case "s":
+      var tom3 = new Audio('https://github.com/crypt37/lol/blob/main/dom/sounds/tom-3.mp3');
+      tom3.play();
+      break;
+
+    case "d":
+      var tom4 = new Audio('https://github.com/crypt37/lol/blob/main/dom/sounds/tom-4.mp3');
+      tom4.play();
+      break;
+
+    case "j":
+      var snare = new Audio('https://github.com/crypt37/lol/blob/main/dom/sounds/snare.mp3');
+      snare.play();
+      break;
+
+    case "k":
+      var crash = new Audio('https://github.com/crypt37/lol/blob/main/dom/sounds/crash.mp3');
+      crash.play();
+      break;
+
+    case "l":
+      var kick = new Audio('https://github.com/crypt37/lol/blob/main/dom/sounds/kick-bass.mp3');
+      kick.play();
+      break;
 
 
-    lols[i].addEventListener("click", kek);
+    default: console.log(key);
 
+  }
 }
 
 
-function kek() {
+function buttonAnimation(currentKey) {
 
-    var button = this.innerHTML;
-    button_pressed(button);
-}
+  var activeButton = document.querySelector("." + currentKey);
 
-function button_pressed(button) {
+  activeButton.classList.add("pressed");
 
-    switch (button) {
-        case "w":
-
-            var lol = "sounds/crash.mp3";
-            play_music(lol);
-            break;
-        case "a":
-
-            play_music("sounds/kick-bass.mp3");
-            break;
-        case "s":
-
-            play_music("sounds/snare.mp3");
-            break;
-        case "d":
-            play_music("sounds/tom-1.mp3");
-            break;
-        case "j":
-            play_music("sounds/tom-2.mp3");
-            break;
-        case "k":
-            play_music("sounds/tom-3.mp3");
-            break;
-        case "l":
-            play_music("sounds/tom-4.mp3");
-            break;
-    }
-}
-
-
-function play_music(name) {
-
-    var audio = new Audio(name);
-
-    return audio.play();
+  setTimeout(function() {
+    activeButton.classList.remove("pressed");
+  }, 100);
 
 }
