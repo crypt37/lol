@@ -14,7 +14,7 @@ document.onclick =function  dice  () {
 
      } else if (player_1 < player_2) {
          document.getElementById("h1").textContent = "player 2 WON ";
-          location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+          location.replace("https://youtu.be/dQw4w9WgXcQ");
      } else if (player_1 === player_2) {
          document.getElementById("h1").textContent = " DRAW ";
 
