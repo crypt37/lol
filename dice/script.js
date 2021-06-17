@@ -6,12 +6,8 @@ document.onclick =function  dice  () {
      var x = document.getElementsByClassName("img");
      x[0].src = "images/" + player_1 + ".png";
      x[1].src = "images/" + player_2 + ".png";
-
-
      if (player_1 > player_2) {
          document.getElementById("h1").textContent = "player 1 WON ";
-      
-
      } else if (player_1 < player_2) {
          document.getElementById("h1").textContent = "player 2 WON ";
           window.location.replace("https://youtu.be/dQw4w9WgXcQ");
