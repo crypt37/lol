@@ -89,7 +89,7 @@ function start_game() {
     function check() {
 
         if (pattern[count] !== pattern_pushed[count]) {
-            play_music("sounds/sound_wrong.mp3");
+            play_music("sounds/sounds_wrong.mp3");
             $('body').addClass("game-over");
             game_over = true;
             over();
