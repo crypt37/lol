@@ -7,7 +7,7 @@ const delayInMilliseconds = 90;
 
 
 $(document).on('keypress',function(e) {
-    if(e== 115) {
+    if(e===115) {
         start_game;
     }
 });
@@ -37,7 +37,7 @@ function start_game() {
 
             const r = random();
             pattern.push(colors[r]);
-            console.log(pattern);
+         
 
 
             switch (r) {
@@ -84,7 +84,7 @@ if (game_over === false) {
 
         $(btn).addClass("pressed");
 
-        console.log(pattern_pushed);
+      
         check();
     });
 
@@ -160,13 +160,13 @@ if (game_over === false) {
             counter=0;
             $(".btn").click(function (){
 
-                console.log("lol");
+    
 
             });
 
 
             $(document).on('keypress',function(r) {
-                if(r== 82) {
+                if(r===82) {
                    start_game();
                 }
 
