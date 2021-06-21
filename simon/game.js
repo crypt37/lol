@@ -13,7 +13,6 @@ $(document).on('keypress',function(e) {
 });
 
 
-$(document).on('keypress',start_game);
 function start_game() {
 
 
