@@ -7,7 +7,7 @@ const delayInMilliseconds = 90;
 
 
 $(document).on('keypress',function(e) {
-    if(e===115) {
+    if(e==115) {
         start_game;
     }
 });
@@ -165,7 +165,7 @@ if (game_over === false) {
 
 
             $(document).on('keypress',function(r) {
-                if(r===82) {
+                if(r==82) {
                    start_game();
                 }
 
