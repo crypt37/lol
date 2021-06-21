@@ -1,27 +1,30 @@
-var game_over=false;
-const __tOut=500
+var game_over = true;
+const __tOut = 500
 let pattern = [];
 let pattern_pushed = [];
 const delayInMilliseconds = 90;
+const colors = ["green", "red", "yellow", "blue"];
 
+$(document).on('keypress', function (e) {
 
-
-$(document).on('keypress',function(e) {
-    if(e==115) {
-        start_game;
+    if (e.key === 'Enter') {
+        game_over = false;
+        start_game();
     }
 });
 
 
 function start_game() {
 
-
+    pattern.length = 0;
+    pattern_pushed.length = 0;
     let level = 1;
     let count = 0;
 
-    const colors = ["green", "red", "yellow", "blue"];
-    let counter=level;
+    let counter = level;
+
     $("#level-title").text(" level: " + level);
+
     setTimeout(task, __tOut, counter);
 
 
@@ -29,14 +32,11 @@ function start_game() {
 
 
         if (counter === 0) {
-          return ;
-        }
-
-        else {
+            return;
+        } else {
 
             const r = random();
             pattern.push(colors[r]);
-         
 
 
             switch (r) {
@@ -59,70 +59,58 @@ function start_game() {
             }
         }
 
-        setTimeout(task, __tOut, counter -1 )
+        setTimeout(task, __tOut, counter - 1)
     }
 
 
+    if (game_over === false) {
+
+        $(".btn").click(function () {
+
+            let btn = this;
+
+            pattern_pushed.push(this.id);
+
+            setTimeout(function () {
+                $(btn).removeClass("pressed");
+
+            }, 40);
+
+            $(btn).addClass("pressed");
 
 
+            check();
+        });
 
 
-
-if (game_over === false) {
-
-    $(".btn").click(function () {
-
-        let btn = this;
-
-        pattern_pushed.push(this.id);
-
-        setTimeout(function () {
-            $(btn).removeClass("pressed");
-
-        }, 40);
-
-        $(btn).addClass("pressed");
-
-      
-        check();
-    });
-
-
-}
+    }
 
 
     function check() {
 
-            if (pattern[count] !== pattern_pushed[count]) {
-                play_music("sounds/sounds_wrong.mp3");
-                $('body').addClass("game-over");
-                game_over = true;
-                over();
+        if (pattern[count] !== pattern_pushed[count]) {
+            play_music("sounds/wrong.mp3");
+            $('body').addClass("game-over");
+            game_over = true;
+            over();
+
+        } else {
+
+            count++;
+
+            pattern.length = level;
+            if (pattern_pushed.length === pattern.length) {
+                level++;
+                count = 0;
+                pattern.length = 0;
+                pattern_pushed.length = 0;
+                setTimeout(task, __tOut, level);
+
+
+                $("#level-title").text(" level: " + level);
 
             }
-            else  {
-
-                count ++;
-
-                pattern.length =level;
-                if (pattern_pushed.length===pattern.length) {
-                        level++;
-                        count = 0;
-                        pattern.length=0;
-                        pattern_pushed.length=0;
-                        setTimeout(task, __tOut, level);
-
-
-
-                    $("#level-title").text(" level: " + level);
-
-                }
-              return;
-
-
-
-
-             }
+        }
     }
 
 
@@ -140,37 +128,18 @@ if (game_over === false) {
 
 
     function over() {
-        var game_over=true;
+        game_over = true;
 
         setTimeout(function () {
             $('body').removeClass("game-over");
         }, 1000);
 
-
-        $("#level-title").text("you lost ");
-
-
-
-            $("#level-title").text("press r  key to try again ");
-            pattern.length = 0;
-            pattern_pushed.length = 0;
-            count = 0;
-            level=1;
-            counter=0;
-            $(".btn").click(function (){
-
-    
-
-            });
+        $("#level-title").text("press enter   key to try again ");
+        location.reload(true);
 
 
-            $(document).on('keypress',function(r) {
-                if(r==82) {
-                   start_game();
-                }
-
-    });
-}}
+    }
+}
 
 
 
