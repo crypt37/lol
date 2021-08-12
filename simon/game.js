@@ -7,10 +7,10 @@ const colors = ["green", "red", "yellow", "blue"];
 
 $(document).on('keypress', function (e) {
 
-    if (e.key === 'Enter') {
+   
         game_over = false;
         start_game();
-    }
+    
 });
 
 
